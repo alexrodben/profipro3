@@ -15,6 +15,8 @@ public class BuscarProductoController implements Controllers {
   ) {
     this.view = buscarProductoView;
     this.type = type;
+    System.out.println(this.type);
+
     addMouseListener();
   }
 

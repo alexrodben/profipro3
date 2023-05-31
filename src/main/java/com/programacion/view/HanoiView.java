@@ -38,21 +38,22 @@ public class HanoiView extends javax.swing.JFrame {
         jLabelBC = new javax.swing.JLabel();
         jLabelCA = new javax.swing.JLabel();
         jLabelCB = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jComboBoxDiscos = new javax.swing.JComboBox<>();
-        jLabelMinMov = new javax.swing.JLabel();
-        jLabelMovimientos = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabelMinimoMovimientos = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabelNumeroMovimientos = new javax.swing.JLabel();
         jButtonIniciar = new javax.swing.JButton();
         jButtonReiniciar = new javax.swing.JButton();
         jButtonResolver = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabelBackground = new javax.swing.JLabel();
 
         setTitle("Agregar Producto");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableTorreA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -77,8 +78,9 @@ public class HanoiView extends javax.swing.JFrame {
             jTableTorreA.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 200, 300));
+        jPanel1.add(jScrollPaneA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 200, 250));
 
+        jTableTorreB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -103,8 +105,9 @@ public class HanoiView extends javax.swing.JFrame {
             jTableTorreB.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneB, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 200, 300));
+        jPanel1.add(jScrollPaneB, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 200, 250));
 
+        jTableTorreC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -129,73 +132,83 @@ public class HanoiView extends javax.swing.JFrame {
             jTableTorreC.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 200, 300));
+        jPanel1.add(jScrollPaneC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 200, 250));
 
         jLabelAB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-b.png"))); // NOI18N
-        jPanel1.add(jLabelAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 385, -1, -1));
+        jLabelAB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
 
         jLabelAC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-c.png"))); // NOI18N
-        jPanel1.add(jLabelAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 385, -1, -1));
+        jLabelAC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
 
         jLabelBA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-a.png"))); // NOI18N
-        jPanel1.add(jLabelBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 385, -1, -1));
+        jLabelBA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         jLabelBC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-c.png"))); // NOI18N
-        jPanel1.add(jLabelBC, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 385, -1, -1));
+        jLabelBC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelBC, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, -1, -1));
 
         jLabelCA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-a.png"))); // NOI18N
-        jPanel1.add(jLabelCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 385, -1, -1));
+        jLabelCA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, -1));
 
         jLabelCB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-b.png"))); // NOI18N
-        jPanel1.add(jLabelCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 385, -1, -1));
-
-        jComboBoxDiscos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBoxDiscos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jPanel1.add(jComboBoxDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, 150, 30));
-
-        jLabelMinMov.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
-        jLabelMinMov.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabelMinMov.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMinMov.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jLabelMinMov.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabelMinMov, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 150, 40));
-
-        jLabelMovimientos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
-        jLabelMovimientos.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabelMovimientos.setForeground(new java.awt.Color(0, 0, 0));
-        jLabelMovimientos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jLabelMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabelMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 150, 40));
-
-        jButtonIniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonIniciar.setText("Iniciar");
-        jPanel1.add(jButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, 150, 40));
-
-        jButtonReiniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonReiniciar.setText("Reiniciar");
-        jPanel1.add(jButtonReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 660, 150, 40));
-
-        jButtonResolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonResolver.setText("Resolver");
-        jPanel1.add(jButtonResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, 150, 40));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Número de movimientos");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 570, 200, 40));
+        jLabelCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Número de discos");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 470, 200, 40));
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 420, 200, 40));
+
+        jComboBoxDiscos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jComboBoxDiscos.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxDiscos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7", "8", "9", "10" }));
+        jPanel1.add(jComboBoxDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 150, 40));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Número min. mov.");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 520, 200, 40));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 470, 200, 40));
+
+        jLabelMinimoMovimientos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
+        jLabelMinimoMovimientos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelMinimoMovimientos.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelMinimoMovimientos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMinimoMovimientos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabelMinimoMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabelMinimoMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 150, 40));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Número de movimientos");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 520, 200, 40));
+
+        jLabelNumeroMovimientos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
+        jLabelNumeroMovimientos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelNumeroMovimientos.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelNumeroMovimientos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNumeroMovimientos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabelNumeroMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabelNumeroMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 150, 40));
+
+        jButtonIniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonIniciar.setText("Iniciar");
+        jPanel1.add(jButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 585, 150, 40));
+
+        jButtonReiniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonReiniciar.setText("Reiniciar");
+        jPanel1.add(jButtonReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 585, 150, 40));
+
+        jButtonResolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonResolver.setText("Resolver");
+        jPanel1.add(jButtonResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 585, 150, 40));
 
         jLabelBackground.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 800));
+        jPanel1.add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,8 +293,8 @@ public class HanoiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBackground;
     public javax.swing.JLabel jLabelCA;
     public javax.swing.JLabel jLabelCB;
-    public javax.swing.JLabel jLabelMinMov;
-    public javax.swing.JLabel jLabelMovimientos;
+    public javax.swing.JLabel jLabelMinimoMovimientos;
+    public javax.swing.JLabel jLabelNumeroMovimientos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneA;
     private javax.swing.JScrollPane jScrollPaneB;

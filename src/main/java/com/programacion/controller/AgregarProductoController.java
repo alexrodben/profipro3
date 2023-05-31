@@ -15,6 +15,7 @@ public class AgregarProductoController implements Controllers {
   ) {
     this.view = agregarProductoView;
     this.type = type;
+    System.out.println(this.type);
     addMouseListener();
   }
 

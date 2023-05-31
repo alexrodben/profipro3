@@ -15,6 +15,8 @@ public class EditarProductoController implements Controllers {
   ) {
     this.view = editarProductoView;
     this.type = type;
+    System.out.println(this.type);
+
     addMouseListener();
   }
 
