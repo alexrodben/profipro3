@@ -1,32 +1,29 @@
 package com.programacion.controller;
 
+import com.programacion.dto.Data;
 import com.programacion.proyecto.Controllers;
+import com.programacion.proyecto.Models;
 import com.programacion.view.BuscarProductoView;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 public class BuscarProductoController implements Controllers {
 
   private final BuscarProductoView view;
-  private final int type;
+  private final Models model;
 
   public BuscarProductoController(
     BuscarProductoView buscarProductoView,
-    int type
+    Models model
   ) {
     this.view = buscarProductoView;
-    this.type = type;
-    System.out.println(this.type);
-
+    this.model = model;
     addMouseListener();
   }
 
   @Override
   public final void addMouseListener() {
     view.jLabelBuscar.addMouseListener(this);
-    view.jTextFieldCodigo.addMouseListener(this);
-    view.jTextFieldNombre.addMouseListener(this);
-    view.jTextFieldExistencia.addMouseListener(this);
-    view.jTextFieldTipo.addMouseListener(this);
   }
 
   @Override
@@ -36,7 +33,9 @@ public class BuscarProductoController implements Controllers {
   }
 
   @Override
-  public void mouseClicked(MouseEvent e) {}
+  public void mouseClicked(MouseEvent e) {
+    if (e.getSource() == view.jLabelBuscar) this.buscar();
+  }
 
   @Override
   public void mouseEntered(MouseEvent e) {}
@@ -49,4 +48,32 @@ public class BuscarProductoController implements Controllers {
 
   @Override
   public void mouseReleased(MouseEvent e) {}
+
+  private void buscar() {
+    System.out.println("Buscar");
+    if (view.jTextFieldCodigo.getText().equals("")) {
+      JOptionPane.showMessageDialog(
+        null,
+        "No hay un codigo para buscar",
+        "Error",
+        JOptionPane.ERROR_MESSAGE
+      );
+      return;
+    } else {
+      Data data = model.buscar(view.jTextFieldCodigo.getText());
+      if (data == null) {
+        JOptionPane.showMessageDialog(
+          null,
+          "No se encontro el producto",
+          "Error",
+          JOptionPane.ERROR_MESSAGE
+        );
+        return;
+      } else {
+        view.jTextFieldTipo.setText(data.getTipo());
+        view.jTextFieldNombre.setText(data.getNombre());
+        view.jTextFieldExistencia.setText(data.getExistencias());
+      }
+    }
+  }
 }

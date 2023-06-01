@@ -1,31 +1,28 @@
 package com.programacion.controller;
 
+import com.programacion.dto.Data;
 import com.programacion.proyecto.Controllers;
+import com.programacion.proyecto.Models;
 import com.programacion.view.AgregarProductoView;
 import java.awt.event.MouseEvent;
 
 public class AgregarProductoController implements Controllers {
 
   private final AgregarProductoView view;
-  private final int type;
+  private final Models model;
 
   public AgregarProductoController(
     AgregarProductoView agregarProductoView,
-    int type
+    Models model
   ) {
     this.view = agregarProductoView;
-    this.type = type;
-    System.out.println(this.type);
+    this.model = model;
     addMouseListener();
   }
 
   @Override
   public final void addMouseListener() {
     view.jLabelAccion.addMouseListener(this);
-    view.jTextFieldCodigo.addMouseListener(this);
-    view.jTextFieldNombre.addMouseListener(this);
-    view.jTextFieldExistencia.addMouseListener(this);
-    view.jTextFieldTipo.addMouseListener(this);
   }
 
   @Override
@@ -35,7 +32,9 @@ public class AgregarProductoController implements Controllers {
   }
 
   @Override
-  public void mouseClicked(MouseEvent e) {}
+  public void mouseClicked(MouseEvent e) {
+    if (e.getSource() == view.jLabelAccion) this.agregar();
+  }
 
   @Override
   public void mouseEntered(MouseEvent e) {}
@@ -48,4 +47,15 @@ public class AgregarProductoController implements Controllers {
 
   @Override
   public void mouseReleased(MouseEvent e) {}
+
+  private void agregar() {
+    System.out.println("Agregando producto");
+    Data data = new Data();
+    data.setTipo(view.jTextFieldTipo.getText());
+    data.setCodigo(view.jTextFieldCodigo.getText());
+    data.setNombre(view.jTextFieldNombre.getText());
+    data.setExistencias(view.jTextFieldExistencia.getText());
+    model.agregar(data);
+    view.setVisible(false);
+  }
 }

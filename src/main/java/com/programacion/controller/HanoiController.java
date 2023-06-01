@@ -46,9 +46,9 @@ public class HanoiController implements Controllers {
 
   @Override
   public final void addMouseListener() {
-    view.jButtonIniciar.addMouseListener(this);
-    view.jButtonResolver.addMouseListener(this);
-    view.jButtonReiniciar.addMouseListener(this);
+    view.jLabelIniciar.addMouseListener(this);
+    view.jLabelResolver.addMouseListener(this);
+    view.jLabelReiniciar.addMouseListener(this);
 
     view.jLabelAB.addMouseListener(this);
     view.jLabelAC.addMouseListener(this);
@@ -68,9 +68,9 @@ public class HanoiController implements Controllers {
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    if (view.jButtonIniciar == e.getSource()) this.iniciar();
-    if (view.jButtonReiniciar == e.getSource()) this.reiniciar();
-    if (view.jButtonResolver == e.getSource()) this.resolver();
+    if (view.jLabelIniciar == e.getSource()) this.iniciar();
+    if (view.jLabelReiniciar == e.getSource()) this.reiniciar();
+    if (view.jLabelResolver == e.getSource()) this.resolver();
     if (view.jLabelAB == e.getSource()) this.moverDeAB();
     if (view.jLabelAC == e.getSource()) this.moverDeAC();
     if (view.jLabelBA == e.getSource()) this.moverDeBA();
@@ -104,7 +104,7 @@ public class HanoiController implements Controllers {
     DefaultTableCellRenderer centerRendererA = new DefaultTableCellRenderer();
     centerRendererA.setHorizontalAlignment(SwingConstants.CENTER);
     view.jTableTorreA.setShowHorizontalLines(false);
-    view.jTableTorreA.setRowHeight(22);
+    view.jTableTorreA.setRowHeight(19);
     view.jTableTorreA
       .getColumnModel()
       .getColumn(0)
@@ -113,7 +113,7 @@ public class HanoiController implements Controllers {
     DefaultTableCellRenderer centerRendererB = new DefaultTableCellRenderer();
     centerRendererB.setHorizontalAlignment(SwingConstants.CENTER);
     view.jTableTorreB.setShowHorizontalLines(false);
-    view.jTableTorreB.setRowHeight(22);
+    view.jTableTorreB.setRowHeight(19);
     view.jTableTorreB
       .getColumnModel()
       .getColumn(0)
@@ -122,7 +122,7 @@ public class HanoiController implements Controllers {
     DefaultTableCellRenderer centerRendererC = new DefaultTableCellRenderer();
     centerRendererC.setHorizontalAlignment(SwingConstants.CENTER);
     view.jTableTorreC.setShowHorizontalLines(false);
-    view.jTableTorreC.setRowHeight(22);
+    view.jTableTorreC.setRowHeight(19);
     view.jTableTorreC
       .getColumnModel()
       .getColumn(0)
@@ -135,6 +135,7 @@ public class HanoiController implements Controllers {
     view.jLabelNumeroMovimientos.setText("0");
     view.jLabelMinimoMovimientos.setText("0");
     view.jComboBoxDiscos.setSelectedItem(String.valueOf(objetivo));
+    dataTables();
   }
 
   private void presentarCantidadMovimientos() {
@@ -153,7 +154,6 @@ public class HanoiController implements Controllers {
     try {
       if (!view.jLabelMinimoMovimientos.getText().equals("")) {
         limpiar();
-        iniciar();
       }
     } catch (Exception e) {
       e.printStackTrace();

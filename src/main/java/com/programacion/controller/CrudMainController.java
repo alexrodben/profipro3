@@ -4,7 +4,11 @@
  */
 package com.programacion.controller;
 
+import com.programacion.model.ColaModel;
+import com.programacion.model.ListaModel;
+import com.programacion.model.PilaModel;
 import com.programacion.proyecto.Controllers;
+import com.programacion.proyecto.Models;
 import com.programacion.view.CrudMainView;
 import com.programacion.view.CrudView;
 import java.awt.event.MouseEvent;
@@ -16,9 +20,15 @@ import java.awt.event.MouseEvent;
 public class CrudMainController implements Controllers {
 
   private final CrudMainView view;
+  private final Models lista;
+  private final Models pila;
+  private final Models cola;
 
   public CrudMainController(CrudMainView mainView) {
     view = mainView;
+    lista = new ListaModel();
+    pila = new PilaModel();
+    cola = new ColaModel();
     addMouseListener();
   }
 
@@ -31,7 +41,7 @@ public class CrudMainController implements Controllers {
 
   @Override
   public void getInfo() {
-      System.out.println("view: " + view.getClass().getName());
+    System.out.println("view: " + view.getClass().getName());
     System.out.println("Controller: " + this.getClass().getName());
   }
 
@@ -40,30 +50,21 @@ public class CrudMainController implements Controllers {
     if (view.jLabelCola == e.getSource()) {
       System.out.println("Colas");
       CrudView crudView = new CrudView();
-      CrudController crudController = new CrudController(
-        crudView,
-        CrudController.COLA
-      );
+      CrudController crudController = new CrudController(crudView, cola);
       crudView.setVisible(true);
       crudController.getInfo();
     }
     if (view.jLabelPila == e.getSource()) {
       System.out.println("Pilas");
       CrudView crudView = new CrudView();
-      CrudController crudController = new CrudController(
-        crudView,
-        CrudController.PILA
-      );
+      CrudController crudController = new CrudController(crudView, pila);
       crudView.setVisible(true);
       crudController.getInfo();
     }
     if (view.jLabelLista == e.getSource()) {
       System.out.println("Listas");
       CrudView crudView = new CrudView();
-      CrudController crudController = new CrudController(
-        crudView,
-        CrudController.LISTA
-      );
+      CrudController crudController = new CrudController(crudView, lista);
       crudView.setVisible(true);
       crudController.getInfo();
     }

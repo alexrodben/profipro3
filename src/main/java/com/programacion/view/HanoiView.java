@@ -26,11 +26,8 @@ public class HanoiView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPaneA = new javax.swing.JScrollPane();
         jTableTorreA = new javax.swing.JTable();
-        jScrollPaneB = new javax.swing.JScrollPane();
         jTableTorreB = new javax.swing.JTable();
-        jScrollPaneC = new javax.swing.JScrollPane();
         jTableTorreC = new javax.swing.JTable();
         jLabelAB = new javax.swing.JLabel();
         jLabelAC = new javax.swing.JLabel();
@@ -38,21 +35,21 @@ public class HanoiView extends javax.swing.JFrame {
         jLabelBC = new javax.swing.JLabel();
         jLabelCA = new javax.swing.JLabel();
         jLabelCB = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jComboBoxDiscos = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
         jLabelMinimoMovimientos = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabelNumeroMovimientos = new javax.swing.JLabel();
-        jButtonIniciar = new javax.swing.JButton();
-        jButtonReiniciar = new javax.swing.JButton();
-        jButtonResolver = new javax.swing.JButton();
+        jLabelIniciar = new javax.swing.JLabel();
+        jLabelResolver = new javax.swing.JLabel();
+        jLabelReiniciar = new javax.swing.JLabel();
         jLabelBackground = new javax.swing.JLabel();
 
         setTitle("Agregar Producto");
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableTorreA.setBackground(new java.awt.Color(255, 255, 255));
+        jTableTorreA.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jTableTorreA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,13 +70,13 @@ public class HanoiView extends javax.swing.JFrame {
         jTableTorreA.setAutoscrolls(false);
         jTableTorreA.setFocusable(false);
         jTableTorreA.setRowSelectionAllowed(false);
-        jScrollPaneA.setViewportView(jTableTorreA);
+        jPanel1.add(jTableTorreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 143, 175, 200));
         if (jTableTorreA.getColumnModel().getColumnCount() > 0) {
             jTableTorreA.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneA, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 200, 250));
-
+        jTableTorreB.setBackground(new java.awt.Color(255, 255, 255));
+        jTableTorreB.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jTableTorreB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -100,13 +97,13 @@ public class HanoiView extends javax.swing.JFrame {
         jTableTorreB.setAutoscrolls(false);
         jTableTorreB.setFocusable(false);
         jTableTorreB.setRowSelectionAllowed(false);
-        jScrollPaneB.setViewportView(jTableTorreB);
+        jPanel1.add(jTableTorreB, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 143, 175, 200));
         if (jTableTorreB.getColumnModel().getColumnCount() > 0) {
             jTableTorreB.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneB, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 200, 250));
-
+        jTableTorreC.setBackground(new java.awt.Color(255, 255, 255));
+        jTableTorreC.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jTableTorreC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTableTorreC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,52 +124,40 @@ public class HanoiView extends javax.swing.JFrame {
         jTableTorreC.setAutoscrolls(false);
         jTableTorreC.setFocusable(false);
         jTableTorreC.setRowSelectionAllowed(false);
-        jScrollPaneC.setViewportView(jTableTorreC);
+        jPanel1.add(jTableTorreC, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 143, 175, 200));
         if (jTableTorreC.getColumnModel().getColumnCount() > 0) {
             jTableTorreC.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jPanel1.add(jScrollPaneC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 200, 250));
-
         jLabelAB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-b.png"))); // NOI18N
         jLabelAB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+        jPanel1.add(jLabelAB, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 364, -1, -1));
 
         jLabelAC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-c.png"))); // NOI18N
         jLabelAC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, -1, -1));
+        jPanel1.add(jLabelAC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 364, -1, -1));
 
         jLabelBA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-a.png"))); // NOI18N
         jLabelBA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        jPanel1.add(jLabelBA, new org.netbeans.lib.awtextra.AbsoluteConstraints(269, 364, -1, -1));
 
         jLabelBC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-c.png"))); // NOI18N
         jLabelBC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelBC, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, -1, -1));
+        jPanel1.add(jLabelBC, new org.netbeans.lib.awtextra.AbsoluteConstraints(356, 364, -1, -1));
 
         jLabelCA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-a.png"))); // NOI18N
         jLabelCA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, -1));
+        jPanel1.add(jLabelCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 364, -1, -1));
 
         jLabelCB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/letra-b.png"))); // NOI18N
         jLabelCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 320, -1, -1));
+        jPanel1.add(jLabelCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 364, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Número de discos");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 420, 200, 40));
-
+        jComboBoxDiscos.setBackground(new java.awt.Color(255, 255, 255));
         jComboBoxDiscos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jComboBoxDiscos.setForeground(new java.awt.Color(0, 0, 0));
         jComboBoxDiscos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jPanel1.add(jComboBoxDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 150, 40));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Número min. mov.");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 470, 200, 40));
+        jPanel1.add(jComboBoxDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 445, 225, 30));
 
         jLabelMinimoMovimientos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
         jLabelMinimoMovimientos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -180,12 +165,7 @@ public class HanoiView extends javax.swing.JFrame {
         jLabelMinimoMovimientos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelMinimoMovimientos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jLabelMinimoMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabelMinimoMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, 150, 40));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Número de movimientos");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 520, 200, 40));
+        jPanel1.add(jLabelMinimoMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 490, 225, 30));
 
         jLabelNumeroMovimientos.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.foreground"));
         jLabelNumeroMovimientos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -193,22 +173,26 @@ public class HanoiView extends javax.swing.JFrame {
         jLabelNumeroMovimientos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNumeroMovimientos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jLabelNumeroMovimientos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(jLabelNumeroMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, 150, 40));
+        jPanel1.add(jLabelNumeroMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 545, 225, 30));
 
-        jButtonIniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonIniciar.setText("Iniciar");
-        jPanel1.add(jButtonIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 585, 150, 40));
+        jLabelIniciar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabelIniciar.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 610, 160, 45));
 
-        jButtonReiniciar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonReiniciar.setText("Reiniciar");
-        jPanel1.add(jButtonReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 585, 150, 40));
+        jLabelResolver.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabelResolver.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 610, 160, 45));
 
-        jButtonResolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonResolver.setText("Resolver");
-        jPanel1.add(jButtonResolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 585, 150, 40));
+        jLabelReiniciar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabelReiniciar.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelReiniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 610, 160, 45));
 
         jLabelBackground.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 640));
+        jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hanoi.png"))); // NOI18N
+        jPanel1.add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -279,13 +263,7 @@ public class HanoiView extends javax.swing.JFrame {
   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonIniciar;
-    public javax.swing.JButton jButtonReiniciar;
-    public javax.swing.JButton jButtonResolver;
     public javax.swing.JComboBox<String> jComboBoxDiscos;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelAB;
     public javax.swing.JLabel jLabelAC;
     public javax.swing.JLabel jLabelBA;
@@ -293,12 +271,12 @@ public class HanoiView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBackground;
     public javax.swing.JLabel jLabelCA;
     public javax.swing.JLabel jLabelCB;
+    public javax.swing.JLabel jLabelIniciar;
     public javax.swing.JLabel jLabelMinimoMovimientos;
     public javax.swing.JLabel jLabelNumeroMovimientos;
+    public javax.swing.JLabel jLabelReiniciar;
+    public javax.swing.JLabel jLabelResolver;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPaneA;
-    private javax.swing.JScrollPane jScrollPaneB;
-    private javax.swing.JScrollPane jScrollPaneC;
     public javax.swing.JTable jTableTorreA;
     public javax.swing.JTable jTableTorreB;
     public javax.swing.JTable jTableTorreC;

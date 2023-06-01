@@ -1,22 +1,23 @@
 package com.programacion.controller;
 
+import com.programacion.dto.Data;
 import com.programacion.proyecto.Controllers;
+import com.programacion.proyecto.Models;
 import com.programacion.view.EditarProductoView;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 public class EditarProductoController implements Controllers {
 
   private final EditarProductoView view;
-  private final int type;
+  private final Models model;
 
   public EditarProductoController(
     EditarProductoView editarProductoView,
-    int type
+    Models model
   ) {
     this.view = editarProductoView;
-    this.type = type;
-    System.out.println(this.type);
-
+    this.model = model;
     addMouseListener();
   }
 
@@ -24,10 +25,6 @@ public class EditarProductoController implements Controllers {
   public final void addMouseListener() {
     view.jLabelAccion.addMouseListener(this);
     view.jLabelBuscar.addMouseListener(this);
-    view.jTextFieldCodigo.addMouseListener(this);
-    view.jTextFieldNombre.addMouseListener(this);
-    view.jTextFieldExistencia.addMouseListener(this);
-    view.jTextFieldTipo.addMouseListener(this);
   }
 
   @Override
@@ -37,7 +34,10 @@ public class EditarProductoController implements Controllers {
   }
 
   @Override
-  public void mouseClicked(MouseEvent e) {}
+  public void mouseClicked(MouseEvent e) {
+    if (e.getSource() == view.jLabelBuscar) this.buscar();
+    if (e.getSource() == view.jLabelAccion) this.editar();
+  }
 
   @Override
   public void mouseEntered(MouseEvent e) {}
@@ -50,4 +50,67 @@ public class EditarProductoController implements Controllers {
 
   @Override
   public void mouseReleased(MouseEvent e) {}
+
+  private void buscar() {
+    System.out.println("Buscar");
+    if (view.jTextFieldCodigo.getText().equals("")) {
+      JOptionPane.showMessageDialog(
+        null,
+        "No hay un codigo para buscar",
+        "Error",
+        JOptionPane.ERROR_MESSAGE
+      );
+      return;
+    } else {
+      Data data = model.buscar(view.jTextFieldCodigo.getText());
+      if (data == null) {
+        JOptionPane.showMessageDialog(
+          null,
+          "No se encontro el producto",
+          "Error",
+          JOptionPane.ERROR_MESSAGE
+        );
+        return;
+      } else {
+        view.jTextFieldTipo.setText(data.getTipo());
+        view.jTextFieldNombre.setText(data.getNombre());
+        view.jTextFieldExistencia.setText(data.getExistencias());
+      }
+    }
+  }
+
+  private void editar() {
+    System.out.println("Editar");
+    if (view.jTextFieldCodigo.getText().equals("")) {
+      JOptionPane.showMessageDialog(
+        null,
+        "No hay un codigo para buscar",
+        "Error",
+        JOptionPane.ERROR_MESSAGE
+      );
+      return;
+    } else {
+      Data data = model.buscar(view.jTextFieldCodigo.getText());
+      if (data == null) {
+        JOptionPane.showMessageDialog(
+          null,
+          "No se encontro el producto",
+          "Error",
+          JOptionPane.ERROR_MESSAGE
+        );
+        return;
+      } else {
+        data.setTipo(view.jTextFieldTipo.getText());
+        data.setNombre(view.jTextFieldNombre.getText());
+        data.setExistencias(view.jTextFieldExistencia.getText());
+        model.modificar(data);
+        JOptionPane.showMessageDialog(
+          null,
+          "Se edito el producto",
+          "Exito",
+          JOptionPane.INFORMATION_MESSAGE
+        );
+      }
+    }
+  }
 }

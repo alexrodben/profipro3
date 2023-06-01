@@ -5,11 +5,13 @@
 package com.programacion.controller;
 
 import com.programacion.proyecto.Controllers;
+import com.programacion.proyecto.Models;
 import com.programacion.view.AgregarProductoView;
 import com.programacion.view.BuscarProductoView;
 import com.programacion.view.CrudView;
 import com.programacion.view.EditarProductoView;
 import com.programacion.view.EliminarProductoView;
+import com.programacion.view.ListaProductoView;
 import java.awt.event.MouseEvent;
 
 /**
@@ -19,15 +21,11 @@ import java.awt.event.MouseEvent;
 public class CrudController implements Controllers {
 
   private final CrudView view;
-  private final int type;
+  private final Models model;
 
-  public static int COLA = 1;
-  public static int PILA = 2;
-  public static int LISTA = 3;
-
-  public CrudController(CrudView view, int type) {
+  public CrudController(CrudView view, Models model) {
+    this.model = model;
     this.view = view;
-    this.type = type;
     addMouseListener();
   }
 
@@ -37,7 +35,7 @@ public class CrudController implements Controllers {
     view.jLabelEliminar.addMouseListener(this);
     view.jLabelBuscar.addMouseListener(this);
     view.jLabelEditar.addMouseListener(this);
-    view.jLabelListar.addMouseListener(this);
+    view.jLabelLista.addMouseListener(this);
   }
 
   @Override
@@ -53,7 +51,7 @@ public class CrudController implements Controllers {
       AgregarProductoView agregarProductoView = new AgregarProductoView();
       AgregarProductoController agregarProductoController = new AgregarProductoController(
         agregarProductoView,
-        type
+        model
       );
       agregarProductoView.setVisible(true);
       agregarProductoController.getInfo();
@@ -63,7 +61,7 @@ public class CrudController implements Controllers {
       EliminarProductoView eliminarProductoView = new EliminarProductoView();
       EliminarProductoController eliminarProductoController = new EliminarProductoController(
         eliminarProductoView,
-        type
+        model
       );
       eliminarProductoView.setVisible(true);
       eliminarProductoController.getInfo();
@@ -73,7 +71,7 @@ public class CrudController implements Controllers {
       BuscarProductoView buscarProductoView = new BuscarProductoView();
       BuscarProductoController buscarProductoController = new BuscarProductoController(
         buscarProductoView,
-        type
+        model
       );
       buscarProductoView.setVisible(true);
       buscarProductoController.getInfo();
@@ -83,22 +81,20 @@ public class CrudController implements Controllers {
       EditarProductoView editarProductoView = new EditarProductoView();
       EditarProductoController editarProductoController = new EditarProductoController(
         editarProductoView,
-        type
+        model
       );
       editarProductoView.setVisible(true);
       editarProductoController.getInfo();
     }
-    if (view.jLabelListar == e.getSource()) {
-      System.out.println("Listar");
-      /*
-      ListarProductoView listarProductoView = new ListarProductoView();
-      ListarProductoController listarProductoController = new ListarProductoController(
-        listarProductoView,
-        type
+    if (view.jLabelLista == e.getSource()) {
+      System.out.println("Lista");
+      ListaProductoView listaProductoView = new ListaProductoView();
+      ListaProductoController listaProductoController = new ListaProductoController(
+        listaProductoView,
+        model
       );
-      listarProductoView.setVisible(true);
-      listarProductoController.getInfo();
-*/
+      listaProductoView.setVisible(true);
+      listaProductoController.getInfo();
     }
   }
 
