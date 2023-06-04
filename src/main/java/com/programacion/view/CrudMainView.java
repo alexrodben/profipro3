@@ -29,6 +29,7 @@ public class CrudMainView extends javax.swing.JFrame {
         jLabelLista = new javax.swing.JLabel();
         jLabelPila = new javax.swing.JLabel();
         jLabelCola = new javax.swing.JLabel();
+        jLabelHash = new javax.swing.JLabel();
         jLabelBackground = new javax.swing.JLabel();
 
         setTitle("Tipo de dato");
@@ -37,13 +38,16 @@ public class CrudMainView extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelLista.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 280, 250));
+        jPanel1.add(jLabelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 316, 210, 190));
 
         jLabelPila.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelPila, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 260, 250));
+        jPanel1.add(jLabelPila, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 320, 190, 182));
 
         jLabelCola.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabelCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 270, 290, 250));
+        jPanel1.add(jLabelCola, new org.netbeans.lib.awtextra.AbsoluteConstraints(586, 324, 204, 178));
+
+        jLabelHash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabelHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(874, 325, 192, 183));
 
         jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainCrud.png"))); // NOI18N
         jPanel1.add(jLabelBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -118,6 +122,7 @@ public class CrudMainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelBackground;
     public javax.swing.JLabel jLabelCola;
+    public javax.swing.JLabel jLabelHash;
     public javax.swing.JLabel jLabelLista;
     public javax.swing.JLabel jLabelPila;
     private javax.swing.JPanel jPanel1;

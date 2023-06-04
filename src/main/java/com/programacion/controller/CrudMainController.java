@@ -7,6 +7,7 @@ package com.programacion.controller;
 import com.programacion.model.ColaModel;
 import com.programacion.model.ListaModel;
 import com.programacion.model.PilaModel;
+import com.programacion.model.HashModel;
 import com.programacion.proyecto.Controllers;
 import com.programacion.proyecto.Models;
 import com.programacion.view.CrudMainView;
@@ -23,12 +24,14 @@ public class CrudMainController implements Controllers {
   private final Models lista;
   private final Models pila;
   private final Models cola;
+  private final Models hash;
 
   public CrudMainController(CrudMainView mainView) {
     view = mainView;
     lista = new ListaModel();
     pila = new PilaModel();
     cola = new ColaModel();
+    hash = new HashModel();
     addMouseListener();
   }
 
@@ -65,6 +68,13 @@ public class CrudMainController implements Controllers {
       System.out.println("Listas");
       CrudView crudView = new CrudView();
       CrudController crudController = new CrudController(crudView, lista);
+      crudView.setVisible(true);
+      crudController.getInfo();
+    }
+    if (view.jLabelHash == e.getSource()) {
+      System.out.println("Hash");
+      CrudView crudView = new CrudView();
+      CrudController crudController = new CrudController(crudView, hash);
       crudView.setVisible(true);
       crudController.getInfo();
     }

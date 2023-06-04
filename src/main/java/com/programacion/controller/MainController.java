@@ -4,11 +4,14 @@
  */
 package com.programacion.controller;
 
+import com.programacion.arboles.ArbolBinarioGrafico;
 import com.programacion.proyecto.Controllers;
 import com.programacion.view.CrudMainView;
 import com.programacion.view.HanoiView;
 import com.programacion.view.MainView;
 import java.awt.event.MouseEvent;
+
+import javax.swing.JFrame;
 
 /**
  *
@@ -35,8 +38,7 @@ public class MainController implements Controllers {
       System.out.println("Crud");
       CrudMainView crudMainView = new CrudMainView();
       CrudMainController crudMainController = new CrudMainController(
-        crudMainView
-      );
+          crudMainView);
       crudMainView.setVisible(true);
       crudMainController.getInfo();
     }
@@ -49,20 +51,27 @@ public class MainController implements Controllers {
     }
     if (view.jLabelArbolBinario == e.getSource()) {
       System.out.println("Arbol Binario");
+      JFrame frame = new ArbolBinarioGrafico();
+      frame.setSize(400, 400);
+      frame.setVisible(true);
     }
   }
 
   @Override
-  public void mousePressed(MouseEvent e) {}
+  public void mousePressed(MouseEvent e) {
+  }
 
   @Override
-  public void mouseReleased(MouseEvent e) {}
+  public void mouseReleased(MouseEvent e) {
+  }
 
   @Override
-  public void mouseEntered(MouseEvent e) {}
+  public void mouseEntered(MouseEvent e) {
+  }
 
   @Override
-  public void mouseExited(MouseEvent e) {}
+  public void mouseExited(MouseEvent e) {
+  }
 
   @Override
   public final void addMouseListener() {
