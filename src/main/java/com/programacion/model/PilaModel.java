@@ -26,7 +26,8 @@ public class PilaModel implements Models {
 
   @Override
   public void eliminar(Data data) {
-    pila.remove(data);
+//    pila.remove(data);
+    pila.pop();
   }
 
   @Override

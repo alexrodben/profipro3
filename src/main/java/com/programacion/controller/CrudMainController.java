@@ -40,6 +40,7 @@ public class CrudMainController implements Controllers {
     view.jLabelCola.addMouseListener(this);
     view.jLabelPila.addMouseListener(this);
     view.jLabelLista.addMouseListener(this);
+    view.jLabelHash.addMouseListener(this);
   }
 
   @Override

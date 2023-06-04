@@ -13,7 +13,7 @@ import com.programacion.view.MainView;
 public class Proyecto {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Iniciando");
         MainView view = new MainView();
         MainController controller = new MainController(view);
         view.setVisible(true);

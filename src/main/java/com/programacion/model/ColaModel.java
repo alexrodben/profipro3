@@ -22,7 +22,8 @@ public class ColaModel implements Models {
 
   @Override
   public void eliminar(Data data) {
-    cola.remove(data);
+//    cola.remove(data);
+    cola.poll();
   }
 
   @Override
